@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] user, error in
             
             guard error == nil , user != nil else {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
             let personRef = self?.ref.child((user!.user.uid))
