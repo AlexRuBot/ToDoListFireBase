@@ -18,6 +18,8 @@ class TasksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = .systemIndigo
 
         guard let currentUser = Auth.auth().currentUser else {return}
         person = Person(user: currentUser)
@@ -41,6 +43,7 @@ class TasksViewController: UIViewController {
         super.viewDidDisappear(animated)
         ref.removeAllObservers()
     }
+    
 
     @IBAction func addTap(_ sender: UIBarButtonItem) {
         
@@ -78,14 +81,42 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.backgroundColor = .systemBlue
-        let textLable = tasks[indexPath.row].title
+        let task = tasks[indexPath.row]
+        let textLable = task.title
+        let isCompleted = task.completed
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = textLable
-        cell.textLabel?.textColor = .systemGray
+        cell.backgroundColor = .clear
+        cell.textLabel?.textColor = .white
+        
+        toggleCompletion(cell: cell, isCompleted: isCompleted)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            task.ref?.removeValue()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else {return}
+        let task = tasks[indexPath.row]
+        let isCompleted = !task.completed
+        
+        toggleCompletion(cell: cell, isCompleted: isCompleted)
+        task.ref?.updateChildValues(["completed": isCompleted])
+    }
+    
+    func toggleCompletion(cell: UITableViewCell, isCompleted: Bool) {
+        cell.accessoryType = isCompleted ? .checkmark : .none
+    }
     
 }
