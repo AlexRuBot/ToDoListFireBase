@@ -68,7 +68,7 @@
                                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Hp7-5E-r8g" kind="presentation" identifier="tasksSegue" modalPresentationStyle="fullScreen" id="HaD-aX-nOW"/>
+                                                    <action selector="loginTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IfK-QU-Gt3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-Y2-Aom">
@@ -79,7 +79,6 @@
                                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="loginTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qn5-UK-jhM"/>
                                                     <action selector="registerTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIy-1h-hx3"/>
                                                 </connections>
                                             </button>
@@ -113,6 +112,7 @@
                         <outlet property="emailTextField" destination="Ded-Hs-q0y" id="Axj-Yg-WuV"/>
                         <outlet property="passwordTextField" destination="qsv-6A-kri" id="VTf-ed-zWt"/>
                         <outlet property="warnLable" destination="1ap-5x-U02" id="Wi4-bD-kS0"/>
+                        <segue destination="Hp7-5E-r8g" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="Gpg-TA-Rdc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -157,6 +157,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="T5E-fy-PPx">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="yeS-GR-Zaz">
+                            <connections>
+                                <action selector="signOutTap:" destination="RLI-qy-Nei" id="WeV-OD-xev"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cMD-9N-BDx">
                             <connections>
                                 <action selector="addTap:" destination="RLI-qy-Nei" id="KVN-S0-RpA"/>
