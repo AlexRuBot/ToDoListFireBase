@@ -22,7 +22,24 @@ class TasksViewController: UIViewController {
         guard let currentUser = Auth.auth().currentUser else {return}
         person = Person(user: currentUser)
         ref = Database.database().reference(withPath: "persons").child(String(person.uid)).child("tasks")
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ref.observe(.value) { [weak self] snapshot in
+            var _tasks = Array<Task>()
+            for item in snapshot.children {
+                let task = Task(snapshot: item as! DataSnapshot)
+                _tasks.append(task)
+            }
+            self?.tasks = _tasks
+            self?.tableView.reloadData()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ref.removeAllObservers()
     }
 
     @IBAction func addTap(_ sender: UIBarButtonItem) {
@@ -57,15 +74,16 @@ class TasksViewController: UIViewController {
 extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.backgroundColor = .clear
-        cell.textLabel?.text = "Number \(indexPath.row)"
-        cell.textLabel?.textColor = .systemBlue
+        cell.backgroundColor = .systemBlue
+        let textLable = tasks[indexPath.row].title
+        cell.textLabel?.text = textLable
+        cell.textLabel?.textColor = .systemGray
         return cell
     }
     
