@@ -34,6 +34,7 @@
 		74ACAE3C26B463B900BB0478 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74CEF94D26B6D92B00AB46D0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		74CEF94F26B6D93B00AB46D0 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		74CEF95526B715A100AB46D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		89E50925D92E8046B4DB8D04 /* Pods-ToDoListFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListFireBase.debug.xcconfig"; path = "Target Support Files/Pods-ToDoListFireBase/Pods-ToDoListFireBase.debug.xcconfig"; sourceTree = "<group>"; };
 		A5DCC63B9F5BF4B76132B1DA /* Pods_ToDoListFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,6 +63,7 @@
 		74ACAE1826B450BB00BB0478 = {
 			isa = PBXGroup;
 			children = (
+				74CEF95526B715A100AB46D0 /* README.md */,
 				74ACAE2326B450BB00BB0478 /* ToDoListFireBase */,
 				74ACAE2226B450BB00BB0478 /* Products */,
 				5414083888370BDC62A8E6E5 /* Pods */,
