@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		74ACAE3126B450BF00BB0478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74ACAE2F26B450BF00BB0478 /* LaunchScreen.storyboard */; };
 		74ACAE3926B459B300BB0478 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACAE3826B459B300BB0478 /* TasksViewController.swift */; };
 		74ACAE3D26B463BA00BB0478 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74ACAE3C26B463B900BB0478 /* GoogleService-Info.plist */; };
+		74CEF94E26B6D92B00AB46D0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEF94D26B6D92B00AB46D0 /* Task.swift */; };
+		74CEF95026B6D93B00AB46D0 /* Сustomers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEF94F26B6D93B00AB46D0 /* Сustomers.swift */; };
 		DF15553A4321122646539666 /* Pods_ToDoListFireBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DCC63B9F5BF4B76132B1DA /* Pods_ToDoListFireBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		74ACAE3226B450BF00BB0478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74ACAE3826B459B300BB0478 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		74ACAE3C26B463B900BB0478 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		74CEF94D26B6D92B00AB46D0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		74CEF94F26B6D93B00AB46D0 /* Сustomers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сustomers.swift"; sourceTree = "<group>"; };
 		89E50925D92E8046B4DB8D04 /* Pods-ToDoListFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListFireBase.debug.xcconfig"; path = "Target Support Files/Pods-ToDoListFireBase/Pods-ToDoListFireBase.debug.xcconfig"; sourceTree = "<group>"; };
 		A5DCC63B9F5BF4B76132B1DA /* Pods_ToDoListFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,7 +56,6 @@
 				89E50925D92E8046B4DB8D04 /* Pods-ToDoListFireBase.debug.xcconfig */,
 				15671A22226494B6EE265D03 /* Pods-ToDoListFireBase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,6 +80,8 @@
 		74ACAE2326B450BB00BB0478 /* ToDoListFireBase */ = {
 			isa = PBXGroup;
 			children = (
+				74CEF95326B6D96000AB46D0 /* Models */,
+				74CEF95426B6D9B400AB46D0 /* Views */,
 				74ACAE3B26B45A0600BB0478 /* Controllers */,
 				74ACAE3A26B459DF00BB0478 /* Supporting files */,
 				74ACAE3226B450BF00BB0478 /* Info.plist */,
@@ -89,8 +94,6 @@
 			children = (
 				74ACAE2426B450BB00BB0478 /* AppDelegate.swift */,
 				74ACAE2626B450BB00BB0478 /* SceneDelegate.swift */,
-				74ACAE2A26B450BB00BB0478 /* Main.storyboard */,
-				74ACAE2F26B450BF00BB0478 /* LaunchScreen.storyboard */,
 				74ACAE3C26B463B900BB0478 /* GoogleService-Info.plist */,
 				74ACAE2D26B450BF00BB0478 /* Assets.xcassets */,
 			);
@@ -104,6 +107,24 @@
 				74ACAE3826B459B300BB0478 /* TasksViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		74CEF95326B6D96000AB46D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74CEF94D26B6D92B00AB46D0 /* Task.swift */,
+				74CEF94F26B6D93B00AB46D0 /* Сustomers.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		74CEF95426B6D9B400AB46D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74ACAE2A26B450BB00BB0478 /* Main.storyboard */,
+				74ACAE2F26B450BF00BB0478 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		98BB65677DB6005C55E9FEFE /* Frameworks */ = {
@@ -231,7 +252,9 @@
 			files = (
 				74ACAE2926B450BB00BB0478 /* LoginViewController.swift in Sources */,
 				74ACAE3926B459B300BB0478 /* TasksViewController.swift in Sources */,
+				74CEF95026B6D93B00AB46D0 /* Сustomers.swift in Sources */,
 				74ACAE2526B450BB00BB0478 /* AppDelegate.swift in Sources */,
+				74CEF94E26B6D92B00AB46D0 /* Task.swift in Sources */,
 				74ACAE2726B450BB00BB0478 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

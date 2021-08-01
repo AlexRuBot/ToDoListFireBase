@@ -19,6 +19,21 @@ class TasksViewController: UIViewController {
 
     @IBAction func addTap(_ sender: UIBarButtonItem) {
         
+        let allertController = UIAlertController(title: "New Task", message: "Add new task", preferredStyle: .alert)
+        allertController.addTextField()
+        let save = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let textField = allertController.textFields?.first , textField.text != "" else {return}
+            
+            // расписать добавлние информации в бд и на сервер
+            
+            
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        allertController.addAction(save)
+        allertController.addAction(cancel)
+        
+        present(allertController, animated: true, completion: nil)
+        
     }
     @IBAction func signOutTap(_ sender: UIBarButtonItem) {
         do{
