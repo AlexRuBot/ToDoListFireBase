@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-struct Сustomers {
+struct Person {
     
     let uid: String
     let email: String

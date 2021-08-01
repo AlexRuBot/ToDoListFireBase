@@ -11,6 +11,7 @@ import Firebase
 class LoginViewController: UIViewController {
     
     let loginSegue = "LoginSegue"
+    var ref: DatabaseReference!
 
     @IBOutlet weak var warnLable: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,6 +20,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference(withPath: "persons")
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(kbDidShow),
                                                name: UIResponder.keyboardDidShowNotification,
@@ -83,11 +85,15 @@ class LoginViewController: UIViewController {
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] user, error in
-            if error == nil {
-                if user != nil {
-                    self?.performSegue(withIdentifier: (self?.loginSegue)!, sender: nil)
-                }
+            
+            guard error == nil , user != nil else {
+                print(error?.localizedDescription)
+                return
             }
+            let personRef = self?.ref.child((user!.user.uid))
+            personRef?.setValue(["email": user?.user.email])
+         
+            
         }
         
     }

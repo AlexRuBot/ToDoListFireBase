@@ -27,4 +27,8 @@ struct Task {
         ref = snapshot.ref
         completed = snapshotValue["completed"] as! Bool
     }
+    
+    func convertToDictionary() -> Any {
+        return ["title": title, "userId": userId, "completed": completed]
+    }
 }

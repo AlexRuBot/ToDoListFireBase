@@ -16,7 +16,7 @@
 		74ACAE3926B459B300BB0478 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACAE3826B459B300BB0478 /* TasksViewController.swift */; };
 		74ACAE3D26B463BA00BB0478 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74ACAE3C26B463B900BB0478 /* GoogleService-Info.plist */; };
 		74CEF94E26B6D92B00AB46D0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEF94D26B6D92B00AB46D0 /* Task.swift */; };
-		74CEF95026B6D93B00AB46D0 /* Сustomers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEF94F26B6D93B00AB46D0 /* Сustomers.swift */; };
+		74CEF95026B6D93B00AB46D0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CEF94F26B6D93B00AB46D0 /* Person.swift */; };
 		DF15553A4321122646539666 /* Pods_ToDoListFireBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DCC63B9F5BF4B76132B1DA /* Pods_ToDoListFireBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,7 @@
 		74ACAE3826B459B300BB0478 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		74ACAE3C26B463B900BB0478 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74CEF94D26B6D92B00AB46D0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		74CEF94F26B6D93B00AB46D0 /* Сustomers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сustomers.swift"; sourceTree = "<group>"; };
+		74CEF94F26B6D93B00AB46D0 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		89E50925D92E8046B4DB8D04 /* Pods-ToDoListFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListFireBase.debug.xcconfig"; path = "Target Support Files/Pods-ToDoListFireBase/Pods-ToDoListFireBase.debug.xcconfig"; sourceTree = "<group>"; };
 		A5DCC63B9F5BF4B76132B1DA /* Pods_ToDoListFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				74CEF94D26B6D92B00AB46D0 /* Task.swift */,
-				74CEF94F26B6D93B00AB46D0 /* Сustomers.swift */,
+				74CEF94F26B6D93B00AB46D0 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			files = (
 				74ACAE2926B450BB00BB0478 /* LoginViewController.swift in Sources */,
 				74ACAE3926B459B300BB0478 /* TasksViewController.swift in Sources */,
-				74CEF95026B6D93B00AB46D0 /* Сustomers.swift in Sources */,
+				74CEF95026B6D93B00AB46D0 /* Person.swift in Sources */,
 				74ACAE2526B450BB00BB0478 /* AppDelegate.swift in Sources */,
 				74CEF94E26B6D92B00AB46D0 /* Task.swift in Sources */,
 				74ACAE2726B450BB00BB0478 /* SceneDelegate.swift in Sources */,
